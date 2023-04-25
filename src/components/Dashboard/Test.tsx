@@ -4,6 +4,7 @@ import { Mood } from "../../App";
 
 interface Props {
   moods: Mood[];
+  // func: (moods: Mood[])
 }
 
 function foo(mood: Mood) {
@@ -15,7 +16,15 @@ function bar(moods: Mood[]) {
 }
 
 function Test({ moods }: Props) {
-  return bar(moods);
+  return (
+    <>
+      <ul>
+        {moods.map((mood) => (
+          <li key={mood.date_recorded}>{"Mood: " + mood.mood}</li>
+        ))}
+      </ul>
+    </>
+  );
 }
 
 export default Test;
