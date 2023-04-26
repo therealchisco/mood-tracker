@@ -5,9 +5,20 @@ interface Props {
   handleChange: (value: number) => void;
 }
 
+function aha(mood: number) {
+  const dateTime = new Date();
+  const x = { date: dateTime, mood: mood };
+  console.log(x);
+}
+
 function Form({ mood, handleChange }: Props) {
   return (
-    <>
+    <form
+      onSubmit={(event) => {
+        event.preventDefault();
+        aha(mood);
+      }}
+    >
       <label htmlFor="customRange2" className="form-label">
         <strong>currently feeling</strong>
       </label>
@@ -25,7 +36,7 @@ function Form({ mood, handleChange }: Props) {
       <button className="btn btn-outline-primary btn-lg">
         <strong>Submit</strong>
       </button>
-    </>
+    </form>
   );
 }
 

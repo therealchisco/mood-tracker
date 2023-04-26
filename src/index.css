@@ -3,18 +3,14 @@
 #customRange2 {
   padding-top: 1%;
   padding-bottom: 3%;
-  padding-left: 7%;
-  padding-right: 7%;
+  padding-left: 16%;
+  padding-right: 16%;
 }
 
 #emoji {
   padding-top: 3%;
   padding-bottom: 1%;
-  font-size: calc(4.2em);
-}
-
-body {
-  color: #FEE8B0;
+  font-size: calc(5.2em);
 }
 
 h1 {
@@ -26,9 +22,10 @@ nav {
 }
 
 a {
-    padding: 2%;
+    padding: 4%;
 }
 
-svg {
-  padding: 5%
+.sriks {
+  padding-left: 2%;
+  padding-right: 2%
 }

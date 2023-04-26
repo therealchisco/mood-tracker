@@ -3,8 +3,7 @@ import axios from "axios";
 import { Mood } from "../../App";
 
 interface Props {
-  moods: Mood[];
-  // func: (moods: Mood[])
+  func: () => JSX.Element;
 }
 
 function foo(mood: Mood) {
@@ -15,16 +14,8 @@ function bar(moods: Mood[]) {
   return <ul>{moods.map((mood) => foo(mood))}</ul>;
 }
 
-function Test({ moods }: Props) {
-  return (
-    <>
-      <ul>
-        {moods.map((mood) => (
-          <li key={mood.date_recorded}>{"Mood: " + mood.mood}</li>
-        ))}
-      </ul>
-    </>
-  );
+function Test({ func }: Props) {
+  return func();
 }
 
 export default Test;
