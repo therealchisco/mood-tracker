@@ -1,13 +1,9 @@
 import { SetStateAction, createElement, useEffect, useState } from "react";
-import "./App.css";
-import Form from "./components/UserInput/Form";
-import HUD from "./components/UserInput/HUD";
-import NavBar from "./components/NavBar";
 import axios from "axios";
+import "./App.css";
+import NavBar from "./components/NavBar";
 import UserInput from "./components/UserInput/UserInput";
-import LineChart from "./components/Dashboard/LineChart";
-import Card from "./components/Dashboard/Card";
-import Accordion from "./components/Dashboard/Accordion";
+import Dashboard from "./components/Dashboard/Dashboard";
 
 export interface Mood {
   date_recorded: string;
@@ -61,8 +57,7 @@ function App() {
     <div className="App">
       <NavBar></NavBar>
       <UserInput />
-      <br></br>
-      <Card></Card>
+      <Dashboard></Dashboard>
     </div>
   );
 }
