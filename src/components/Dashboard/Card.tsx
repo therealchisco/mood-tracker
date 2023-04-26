@@ -1,19 +1,22 @@
-import React from "react";
-import LineChart from "./LineChart";
+import React, { ReactNode } from "react";
 
-function Card() {
+interface Props {
+  children: ReactNode;
+  title?: string;
+  description?: string;
+  footer?: string;
+}
+
+function Card({ title, description, children, footer }: Props) {
   return (
     <div className="card text-center">
       <div className="card-header "></div>
       <div className="card-body">
-        <h5 className="card-title">Your mood history</h5>
-        <p className="card-text">
-          Ready to see your emotional rollercoaster? Hop on and let's take a
-          ride!
-        </p>
-        <LineChart></LineChart>
+        {title && <h5 className="card-title">{title}</h5>}
+        {description && <p className="card-text">{description}</p>}
+        {children}
       </div>
-      <div className="card-footer text-muted"></div>
+      {footer && <div className="card-footer text-muted">{footer}</div>}
     </div>
   );
 }
