@@ -1,32 +1,25 @@
-import React, { useState } from "react";
-
 interface Props {
   mood: number;
   handleChange: (value: number) => void;
+  handleSubmit: (value: number) => void;
 }
 
-function aha(mood: number) {
-  const dateTime = new Date();
-  const x = { date: dateTime, mood: mood };
-  console.log(x);
-}
-
-function Form({ mood, handleChange }: Props) {
+function Form({ mood, handleChange, handleSubmit }: Props) {
   return (
     <form
       onSubmit={(event) => {
         event.preventDefault();
-        aha(mood);
+        handleSubmit(mood);
       }}
     >
       <label htmlFor="customRange2" className="form-label">
-        <strong>currently feeling</strong>
+        <em>currently feeling</em>
       </label>
       <input
         type="range"
         className="form-range text-secondary"
         min="0"
-        max="6"
+        max="8"
         id="customRange2"
         onChange={(event) => {
           handleChange(parseInt(event.target.value));

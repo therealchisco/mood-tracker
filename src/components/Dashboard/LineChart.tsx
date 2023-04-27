@@ -5,6 +5,7 @@ import {
   TimeScale, // x axis
   LinearScale, // y axis
   PointElement,
+  Filler,
 } from "chart.js";
 import { Line } from "react-chartjs-2";
 import "chartjs-adapter-date-fns";
@@ -13,7 +14,8 @@ ChartJS.register(
   LineElement,
   TimeScale, // x axis
   LinearScale, // y axis
-  PointElement
+  PointElement,
+  Filler
 );
 
 function LineChart() {
@@ -24,6 +26,7 @@ function LineChart() {
     "2023-04-13",
     "2023-04-14",
     "2023-04-15",
+    "2023-04-16",
   ];
 
   const data = {
@@ -31,12 +34,12 @@ function LineChart() {
     labels: lbls,
     datasets: [
       {
-        data: [4.3, 3.4, 2, 4.3, 4, 5.4, 3.8, 2, 5],
+        data: [4.3, 3.4, 2, 4, 4.3, 3.4, 5.4, 3.8, 2, 5],
         borderColor: "orange",
-        backgroundColor: "organe",
+        backgroundColor: "rgb(253, 227, 167)",
         fill: true,
         borderWidth: 5,
-        tension: 0.2,
+        tension: 0.4,
       },
     ],
   };
@@ -57,7 +60,7 @@ function LineChart() {
   };
 
   return (
-    <div className="d-flex align-items-center chart">
+    <div className="align-items-center chart">
       <Line data={data} options={options}></Line>
     </div>
   );
